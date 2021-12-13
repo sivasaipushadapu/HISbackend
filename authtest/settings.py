@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-!q9k65&2y1*l21brsmj58by8udn++)#p)5e-56%(gvjc6v%%9_
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://healthis.herokuapp.com"
 
 ALLOWED_HOSTS = ['localhost', 'healthis.herokuapp.com']
 
