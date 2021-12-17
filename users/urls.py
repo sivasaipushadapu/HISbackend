@@ -6,7 +6,7 @@ from allauth.account.views import ConfirmEmailView
 from django.views.generic import TemplateView
 from django.conf.urls import include, url
 from django.views.static import serve
-from students.views import CustomRegisterView
+from .views import CustomRegisterView
 
 
 

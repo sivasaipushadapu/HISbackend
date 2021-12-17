@@ -1,4 +1,4 @@
-"""authtest URL Configuration
+"""homecare-clinical-dashboard URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -17,12 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from students.views import StudentList
-
 router = DefaultRouter()
-
-
-router.register(r"students", StudentList)
 
 
 urlpatterns = [
