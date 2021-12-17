@@ -168,15 +168,20 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 # ACCOUNT_ADAPTER = "fev2.users.adapters.AccountAdapter"
 
 
-# EMAIL
-# ------------------------------------------------------------------------------
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "no-reply@fyndeasy.com"  # sender's email-id
-EMAIL_HOST_PASSWORD = "rnyo0,./098"  # password associated with above email-id
-EMAIL_USE_TLS = True
-EMAIL_SUPPORT_MAIL_TO = "support@fyndeasy.com"  # fyndeasy support email-id
+# # EMAIL
+# # ------------------------------------------------------------------------------
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "no-reply@fyndeasy.com"  # sender's email-id
+# EMAIL_HOST_PASSWORD = "rnyo0,./098"  # password associated with above email-id
+# EMAIL_USE_TLS = True
+# EMAIL_SUPPORT_MAIL_TO = "support@fyndeasy.com"  # fyndeasy support email-id
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = '0.0.0.0'
+EMAIL_PORT = 1025
 
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 LOGIN_URL = 'http://localhost:8000/users/login'

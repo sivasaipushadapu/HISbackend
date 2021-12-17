@@ -35,35 +35,35 @@ sensitive_post_parameters_m = method_decorator(
     sensitive_post_parameters('password1', 'password2'),
 )
 
-def send_email_agent(id):
-    try:
-        agent = User.objects.get(id=id)
-        print("agent-task", agent)
-        text_content = ""
-        subject = '[FyndEasy] Your request for agent code has been recieved.'
-        message = get_template('agentcode_mail_template.html')
-        html_content = message.render({'name': agent.name, 'email': agent.email, 'phone_number': agent.phone_number})
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [
-            agent.email
-        ]
-        msg = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
-        msg.attach_alternative(html_content, "text/html")
-        return msg.send()
-        # ...
-    except User.DoesNotExist:
-        return "something fishy"
+# def send_email_agent(id):
+#     try:
+#         agent = User.objects.get(id=id)
+#         print("agent-task", agent)
+#         text_content = ""
+#         subject = '[FyndEasy] Your request for agent code has been recieved.'
+#         message = get_template('agentcode_mail_template.html')
+#         html_content = message.render({'name': agent.name, 'email': agent.email, 'phone_number': agent.phone_number})
+#         email_from = settings.EMAIL_HOST_USER
+#         recipient_list = [
+#             agent.email
+#         ]
+#         msg = EmailMultiAlternatives(subject, text_content, email_from, recipient_list)
+#         msg.attach_alternative(html_content, "text/html")
+#         return msg.send()
+#         # ...
+#     except User.DoesNotExist:
+#         return "something fishy"
 
     
 class CustomRegisterView(RegisterView):
     serializer_class = CustomRegisterSerializer
     # permission_classes = register_permission_classes()
     # token_model = TokenModel
-    throttle_scope = 'dj_rest_auth'
+    # throttle_scope = 'dj_rest_auth'
 
-    @sensitive_post_parameters_m
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    # @sensitive_post_parameters_m
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
     def get_response_data(self, user):
 
