@@ -17,7 +17,7 @@ urlpatterns = [
    path('auth/registration/', include('dj_rest_auth.registration.urls')),
    path('password-reset-confirm/<uidb64>/<token>/',
       PasswordResetConfirmView.as_view(), name='password_reset_confirm'), 
-   path('siva/', CustomRegisterView.as_view(), name='homepage'),
+   path('custom/registration', CustomRegisterView.as_view(), name='homepage'),
    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 
